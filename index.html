@@ -2,20 +2,30 @@
 <html>
   <head>
     <title>
-      Ethan's Nguyen;
+      Ethan's Nguyen
     </title>
     <link rel="stylesheet" href="styles/websitestyles.css">
-    <script src="styles/website.js" > </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&family=Roboto:wght@400;500;700&family=Source+Code+Pro:ital,wght@1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Montserrat:ital,wght@1,700&family=Roboto:wght@400;500;700&family=Source+Code+Pro:ital,wght@1,300;1,400;1,700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div>
+  <div multi-step>
+    <div class="card" data-step>
+      <h1 data-next>Press me to continue...</h1>    
+    </div>
+    <div class="card" data-step>
     <h1>Hello, my name is Nguyen.</h1>
     <p class="subtitle">Welcome to my website!</p>
+    <button class="continue" onclick="location.reload()">Press me to continue</button>
     <div>
-      <audio id="mySound">
-        <source src ='icons/mixkit-data-input-on-typewriter-1378.wav' type="audio/wav">
-      </audio>
+     <audio id ="mySound" src="icons/mixkit-data-input-on-typewriter-1378.wav" type="audio/wav"></audio>
     </div>
     </div>
+    <script src="styles/website.js" ></script>
+  </div>
   </body>
 </html>

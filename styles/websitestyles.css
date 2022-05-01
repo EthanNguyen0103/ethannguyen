@@ -3,17 +3,22 @@
   --typewriterSpeed: 4.8s;
   --typewriterCharacters: 25;
 }
+.card.active{
+  display: block;
+}
+.card{
+  display: none;
+}
 
 body {
   margin: 0;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Dancing Script", sans-serif;
   min-height: 100vh;
   display: grid;
   place-content: center;
   text-align: center;
   background: var(--bg-color);
 }
-
 h1 {
   color: #ffffff;
   font-size: clamp(16px, 3vw + 16px, 64px);
@@ -41,21 +46,39 @@ h1::before {
 
 h1::after {
   width: 0.125em;
-  background: #121212;
+  background: #ffffff;
   animation: typewriter var(--typewriterSpeed)
       steps(var(--typewriterCharacters)) 1s forwards,
     blink 750ms steps(var(--typewriterCharacters)) infinite;
 }
 
 .subtitle {
-  color: rgba(#B3B3B3, 0.7);
+  color: #B3B3B3;
   font-size: 32px;
   font-weight: 400;
   opacity: 0;
   transform: translateY(48px);
-  animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2s) forwards;
+  animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 1s) forwards;
+}
+.continue{
+  color: #B3B3B3;
+  font-size: 15px;
+  font-family: "Dancing Script", sans-serif;
+  background-color: rgb(34, 34, 34);
+  cursor: pointer;
+  border: solid;  
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(48px);
+  animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 1s) forwards;
+
+
 }
 
+
+@keyframes apear {
+  
+}
 @keyframes typewriter {
   to {
     left: 100%;
@@ -74,15 +97,3 @@ h1::after {
     transform: translateY(0);
   }
 }
-
-#yt-link {
-  position: absolute;
-  bottom: 2em;
-  width: 100%;
-  color: hsl(0 0 0 / 0.7);
-}
-
-#yt-link:hover,
-:focus {
-    color: teal;
-  }
