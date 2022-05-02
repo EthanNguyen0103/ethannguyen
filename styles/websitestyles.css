@@ -1,7 +1,17 @@
 :root {
   --bg-color: rgb(34, 34, 34);
-  --typewriterSpeed: 4.8s;
+  --typewriterSpeed: 4.5s;
   --typewriterCharacters: 25;
+}
+.Press{
+  font-size: clamp(16px, 3vw + 40px, 64px);
+  cursor: pointer;
+  opacity: 0;
+  animation: blinktext 750ms ease 3s infinite;
+};
+ 
+.Press:hover{
+  color: #B3B3B3;
 }
 .card.active{
   display: block;
@@ -18,11 +28,11 @@ body {
   place-content: center;
   text-align: center;
   background: var(--bg-color);
+  margin-bottom: 3000px;
 }
 h1 {
   color: #ffffff;
   font-size: clamp(16px, 3vw + 16px, 64px);
-  position: relative;
   font-family: "Source Code Pro", monospace;
   position: relative;
   width: max-content;
@@ -74,11 +84,76 @@ h1::after {
 
 
 }
-
-
-@keyframes apear {
-  
+.infos{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #B3B3B3;
+  height: 300px;
+  top: 20%;
+  right: 0px; 
+  position: fixed;
+  width: 100px;
+  border: 10px solid rgb(34, 34, 34) ;
+  border-radius: 50px;
+  opacity: 0;
+  transform: translateX(0px);
+  animation: disappear 4s ease 6s infinite alternate;
+  transition: opacity 0.5s;
 }
+.infos:hover{
+  animation: none;
+  opacity: 1;
+}
+/* Style all font awesome icons */
+.fa {
+  padding: 20px;
+  font-size: 20px;
+  width: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 5px;
+  border-radius: 50%;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+  background: #55ACEE;
+  color:white
+}
+/* Spotify */
+.fa-mail-forward{
+  color: white;
+}
+
+/*Github*/
+.fa-github{
+  background-color: black;
+  color:white;
+}
+
+
+@keyframes blinktext {
+  0%{opacity: 0;}
+  50%{opacity: .5;}
+  100%{opacity: 1;}
+}
+
+
 @keyframes typewriter {
   to {
     left: 100%;
@@ -96,4 +171,15 @@ h1::after {
     opacity: 1;
     transform: translateY(0);
   }
+}
+@keyframes disappear {
+  from{
+    opacity: 0;
+    transform: translateX(48px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
 }

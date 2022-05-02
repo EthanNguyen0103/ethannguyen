@@ -12,6 +12,9 @@ if (currentStep <0){
 mutilStep.addEventListener("click", e =>{
   if(e.target.matches("[data-next]")){
       currentStep +=1
+      setTimeout(() => {
+        mySound.play()
+      }, 1000);
   }
   showCurrenStep()
 })
@@ -19,11 +22,13 @@ function showCurrenStep(){
   fontSteps.forEach((step, index)  =>{
     step.classList.toggle("active", index === currentStep)
   })
-  setTimeout(() => {
-    const mySound = document.getElementById('mySound');
-    mySound.play()
-  }, 1000);
 }
+
+setTimeout(() => {
+  mySound.play()
+}, 1000);
+const running = element.style.animationPlayState === 'running';
+element.style.animationPlayState = 'paused';
 
 
 
